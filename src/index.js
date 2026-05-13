@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector('form').insertBefore(dropdDown, document.querySelector('form').children[2])
   document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
-    addTODO(e.target['new-task-description'].value, e.target.prioritySelector.value)
+    addTODO(e.target.elements['new-task-description'].value, e.target.elements.prioritySelector.value)
     e.target.reset()
     const parent = document.getElementById("tasks");
     const sortedItems = [...parent.children].sort((a, b) => a.id.localeCompare(b.id));
